@@ -1,0 +1,63 @@
+#LeaderBoard{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center
+}
+#lhs{
+    height: 95%;
+    border-radius: 25px;
+    width: 25%;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 40px;
+}
+#lhs *{
+    margin: 15px 0px;
+}
+#communityStatus{
+    padding-top: 10px;
+    align-self: center;
+    text-align: center;
+    border-top: 2px solid black;
+    width: 100%;
+}
+#lhs img{
+    align-self: center;
+    height: 12em;
+    width: 12em;
+}
+#lhs button{
+    padding: 10px;
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    color: #17422d;
+    background-color: #70d460;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+#rhs{
+    height: 95%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#rhs #upperhalf{
+    background: url('../Images/—Pngtree—badge\ icon\ icon\ grade\ medal_5749877\ \(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 30px;
+    height: 45%;
+    border-radius: 25px;
+    width: 100%;
+    background-color: #d9d9d9;
+}

@@ -1,0 +1,57 @@
+{
+    "previousEvents":[
+        {
+            "img-source":"https://i.ibb.co/cg0j6cX/sih-guidance.png",
+            "title":"Previous Event 1",
+            "date":"August,31,2023",
+            "location":"Sadar",
+            "organiser":"REEF RCOEM"
+        },
+        {
+            "img-source":"https://i.ibb.co/cg0j6cX/sih-guidance.png",
+            "title":"Previous Event 1",
+            "date":"August,31,2023",
+            "location":"Sadar",
+            "organiser":"REEF RCOEM"
+        },
+        {
+            "img-source":"https://i.ibb.co/cg0j6cX/sih-guidance.png",
+            "title":"Previous Event 1",
+            "date":"August,31,2023",
+            "location":"Sadar",
+            "organiser":"REEF RCOEM"
+        },
+        {
+            "img-source":"https://i.ibb.co/cg0j6cX/sih-guidance.png",
+            "title":"Previous Event 1",
+            "date":"August,31,2023",
+            "location":"Sadar",
+            "organiser":"REEF RCOEM"
+        },
+        {
+            "img-source":"https://i.ibb.co/cg0j6cX/sih-guidance.png",
+            "title":"Previous Event 1",
+            "date":"August,31,2023",
+            "location":"Sadar",
+            "organiser":"REEF RCOEM"
+        },
+        {
+            "img-source":"https://i.ibb.co/cg0j6cX/sih-guidance.png",
+            "title":"Previous Event 1",
+            "date":"August,31,2023",
+            "location":"Sadar",
+            "organiser":"REEF RCOEM"
+        }
+    ],
+
+    "upcomingEvents":[
+        {
+            "img-source":"https://i.ibb.co/7tvWSSf/event-img-1.png",
+            "title":"Upcoming Event 1",
+            "date":"August,31,2023",
+            "location":"Sadar",
+            "organiser":"REEF RCOEM"
+        }
+
+    ]
+}
