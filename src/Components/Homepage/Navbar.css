@@ -9,6 +9,13 @@
 #navbar a{
     color: black;
     text-decoration: none;
-    margin: 0px 9px;
+    font-weight: bold;
+    margin: 0px 20px;
     font-size: 1.7em;
+}
+#navbar img{
+
+    height: 70%;
+    margin-left: 1em;
+    margin-right: auto;
 }

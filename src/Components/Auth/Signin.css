@@ -1,5 +1,6 @@
 #SignIn{
-    width: 100vw;
+    overflow: hidden;
+    width: 100%;
     height: 100vh;
     background-color:#143626;
     display: flex;
@@ -45,5 +46,12 @@
     margin-top: 3px;
     color: white;
 }
-
-
+.secondoption{
+    background: url('../Images/20240121_080424_637.jpg') !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+.already-have a{
+    color: white;
+}

@@ -11,10 +11,10 @@ function Signin() {
   const [usergender, setusergender] = useState("");
   const [userexperience, setuserexperience] = useState("");
   return (
-    <div id="SignIn">
+    <div id="SignIn" className="secondoption">
       <form>
         <h1>Login Form</h1>
-        <Link to="/login">already have a account ,login !!</Link>
+
         <label htmlFor="user-name">Name</label>
         <input
           type="text"
@@ -118,6 +118,9 @@ function Signin() {
             Lead of any envirnomental community
           </option>
         </select>
+        <p className="already-have">
+          Already have a account , <Link to="/login">CLick here</Link> To login
+        </p>
         <button>SignIn</button>
       </form>
     </div>

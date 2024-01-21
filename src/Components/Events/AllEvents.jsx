@@ -1,33 +1,118 @@
 import React, { useState } from "react";
 import "./AllEvents.css";
 import Data from "./data.json";
+import { Link } from "react-router-dom";
 
 function AllEvents() {
   const [isPrevious, setisPrevious] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+
   const generateEventsCards = () => {
-    return Data[`${!isPrevious ? "upcomingEvents" : "previousEvents"}`].map(
-      (details, index) => (
-        <div key={index} className="one-event-card">
-          <img src={details["img-source"]} alt="" />
-          <h2>{details["title"]}</h2>
-          <p className="event-date">
-            <i className="fa-regular fa-calendar"></i>
-            {details["date"]}
-          </p>
-          <p className="on-off-mode">
-            {" "}
-            <i className="fa-solid fa-location-dot"></i>
-            {details["location"]}
-          </p>
-          <button className="more-details-btn">View More</button>
-        </div>
-      )
+    const filteredEvents = Data[
+      `${!isPrevious ? "upcomingEvents" : "previousEvents"}`
+    ].filter(
+      (event) =>
+        // Filter based on title, organiser, and location
+        event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        event.organiser.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        event.location.toLowerCase().includes(searchQuery.toLowerCase())
     );
+
+    return filteredEvents.map((details, index) => (
+      <div key={index} className="one-event-card">
+        <img src={details["img-source"]} alt="" />
+        <h2>{details["title"]}</h2>
+        <p className="event-date">
+          <i className="fa-regular fa-calendar"></i>
+          {details["date"]}
+        </p>
+        <p className="on-off-mode">
+          <i className="fa-solid fa-location-dot"></i>
+          {details["location"]}
+        </p>
+        <p className="on-off-mode">
+          <i className="fa-solid fa-group-arrows-rotate"></i>
+          {details["organiser"]}
+        </p>
+
+        <div>
+          <button className="more-details-btn">View More</button>
+          {isPrevious ? (
+            <></>
+          ) : (
+            <button className="more-details-btn">
+              <Link to={`/enroll/${details["title"]}`}>Enroll</Link>
+            </button>
+          )}
+        </div>
+      </div>
+    ));
   };
 
   return (
     <div className="AllEvents">
-      <h1>Events</h1>
+      <h1>
+        Events{" "}
+        <div className="input-container">
+          <input
+            type="text"
+            name="text"
+            className="input"
+            placeholder="search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <span className="icon">
+            <svg
+              width="19px"
+              height="19px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  opacity="1"
+                  d="M14 5H20"
+                  stroke="#000"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>
+                <path
+                  opacity="1"
+                  d="M14 8H17"
+                  stroke="#000"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>
+                <path
+                  d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2"
+                  stroke="#000"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>
+                <path
+                  opacity="1"
+                  d="M22 22L20 20"
+                  stroke="#000"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                ></path>
+              </g>
+            </svg>
+          </span>
+        </div>
+      </h1>
       <div className="events-nav">
         <div
           className="previous-events"

@@ -1,0 +1,39 @@
+#signinup{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+}
+#signinup a{
+    color: black;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+#landing-page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#landing-page p{
+    width: 30%;
+    font-size: 1.5em;
+}
+
+#ellipse1{
+    position: absolute;
+    left: -70px;
+    top: -60px;
+}
+#features{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 2em;
+}
+#features p{
+    width: 10em;
+    text-align: center;
+
+}
