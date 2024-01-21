@@ -1,5 +1,5 @@
 #LeaderBoard{
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -58,6 +58,33 @@
     padding: 30px;
     height: 45%;
     border-radius: 25px;
-    width: 100%;
     background-color: #d9d9d9;
+    width: 100%;
 }
+#lowerhalf{
+    height: 39%;
+    width: 106%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.myrecentevent {
+    width: 48%;
+    border-radius: 25px;
+    background-color: #d9d9d9;
+  }
+  
+  .one-event-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    /* border: 1px solid #ccc; Add border for each grid item */
+  }
+  
+  .one-event-list div {
+    text-align: center;
+  }
+  

@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import "./Signin.css";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+
 function Signin() {
   const [username, setusername] = useState("");
   const [useremail, setuseremail] = useState("");
@@ -10,6 +10,36 @@ function Signin() {
   const [userage, setuserage] = useState("");
   const [usergender, setusergender] = useState("");
   const [userexperience, setuserexperience] = useState("");
+  const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8001/backend/user/createuser",
+        {
+          username,
+          useremail,
+          userpassword,
+          userphno,
+          userage,
+          usergender,
+          userexperience,
+        }
+      );
+
+      // Assuming the response structure is { message, token }
+      alert(response.data.message); // You can also use a toast library or a modal
+      navigate("/redirect-path"); // Redirect upon successful submission
+    } catch (error) {
+      console.error("Error creating user:", error.message);
+      setError("Internal server error");
+      alert("Error creating user. Please try again."); // Show an alert for error
+    }
+  };
   return (
     <div id="SignIn" className="secondoption">
       <form>
@@ -121,7 +151,7 @@ function Signin() {
         <p className="already-have">
           Already have a account , <Link to="/login">CLick here</Link> To login
         </p>
-        <button>SignIn</button>
+        <button onClick={handleFormSubmit}>SignIn</button>
       </form>
     </div>
   );
