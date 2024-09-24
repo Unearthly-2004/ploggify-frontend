@@ -7,6 +7,7 @@ import Enroll from "./Components/Events/Enroll.jsx"
 import Navbar from "./Components/Homepage/Navbar.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LeaderBoard from "./Components/LeaderBoard/LeaderBoard.jsx";
+import Wallet from "./Components/Wallert/Wallet.jsx";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/wallet" element={<Wallet/>} />
         <Route path="/report" element={<Report/>} />
         <Route path="/dashboard" element={<LeaderBoard/>} />
         <Route path="/signin" element={<Signin/>} />

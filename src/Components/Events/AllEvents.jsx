@@ -6,13 +6,30 @@ import { Link } from "react-router-dom";
 function AllEvents() {
   const [isPrevious, setisPrevious] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isEnrolled, setIsEnrolled] = useState(false);
+
+  const handleEnrollClick = (eventDetails) => {
+    if (!isEnrolled) {
+      const willEnroll = window.confirm(
+        `Are you sure you want to enroll in the event "${eventDetails.title}"? If you are not present after enrolling, your 10 points may be decreased.`
+      );
+
+      if (willEnroll) {
+        setIsEnrolled(true);
+        window.alert("You have successfully enrolled.");
+      } else {
+        window.alert("You have not enrolled.");
+      }
+    } else {
+      window.alert("You have already enrolled.");
+    }
+  };
 
   const generateEventsCards = () => {
     const filteredEvents = Data[
       `${!isPrevious ? "upcomingEvents" : "previousEvents"}`
     ].filter(
       (event) =>
-        // Filter based on title, organiser, and location
         event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         event.organiser.toLowerCase().includes(searchQuery.toLowerCase()) ||
         event.location.toLowerCase().includes(searchQuery.toLowerCase())
@@ -37,11 +54,11 @@ function AllEvents() {
 
         <div>
           <button className="more-details-btn">View More</button>
-          {isPrevious ? (
-            <></>
-          ) : (
-            <button className="more-details-btn">
-              <Link to={`/enroll/${details["title"]}`}>Enroll</Link>
+          {!isPrevious && (
+            <button
+              onClick={() => handleEnrollClick(details)} // Handle enroll click
+            >
+              Enroll
             </button>
           )}
         </div>
