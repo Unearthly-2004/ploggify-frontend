@@ -18,8 +18,8 @@ function App() {
         <Route path="/wallet" element={<Wallet/>} />
         <Route path="/report" element={<Report/>} />
         <Route path="/dashboard" element={<LeaderBoard/>} />
-        <Route path="/signin" element={<Signin/>} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/signin" element={<Login/>} />
+        <Route path="/login" element={<Signin/>} />
         <Route path="/event" element={<AllEvents/>} />
         <Route path="/enroll/:id" element={<Enroll/>} />
       </Routes>
