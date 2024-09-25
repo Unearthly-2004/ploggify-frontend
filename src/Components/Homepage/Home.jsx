@@ -12,10 +12,6 @@ import Contactus from "../Contact/Contactus";
 function Home() {
   return (
     <div>
-      <div id="signinup">
-        <Link to="/signin">Sign in</Link>
-        <Link to="/login">Sign up</Link>
-      </div>
       <div id="landing-page">
         <img src={BanayanTree} alt="" />
         <img src={LandingPageCircle} id="ellipse1" />

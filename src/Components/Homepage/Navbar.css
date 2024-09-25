@@ -1,21 +1,121 @@
-#navbar{
-    height: 10vh;
+/* ... (previous global styles remain unchanged) ... */
+
+/* Navbar styles */
+#navbar {
+    height: 12vh; /* Increased height to accommodate larger text */
     width: 100%;
-    background-color:#d9d9d9 ;
+    background-color: #d9d9d9;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    padding: 0 20px;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-#navbar a{
+
+.logo {
+    height: 60%; /* Slightly increased logo size */
+    margin-right: auto;
+    padding-left: 30px;
+}
+
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#navbar a {
     color: black;
     text-decoration: none;
     font-weight: bold;
-    margin: 0px 20px;
-    font-size: 1.7em;
+    margin: 0 15px; /* Increased margin for better spacing */
+    font-size: 1.8em; /* Increased font size significantly */
+    white-space: nowrap;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
-#navbar img{
 
-    height: 70%;
-    margin-left: 1em;
-    margin-right: auto;
+#navbar a:hover {
+    color: #007bff; /* Add a hover effect */
+}
+
+.user-icon {
+    height: 80%; /* Increased size to match the new navbar scale */
+    cursor: pointer;
+    margin-left: 25px;
+    padding-right: 30px;
+}
+
+/* ... (hamburger menu styles remain unchanged) ... */
+
+/* Updated media query for smaller screens */
+@media screen and (max-width: 1024px) { /* Increased breakpoint for larger screens */
+    #navbar a {
+        font-size: 1.5em; /* Slightly smaller font size for medium screens */
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .user-icon {
+        margin-left: auto;
+    }
+
+    #navbar {
+        height: 10vh; /* Reduce height on smaller screens */
+    }
+}
+/* Updated hamburger menu styles */
+.hamburger-menu {
+    position: fixed;
+    top: 12vh; /* Adjusted to match the new navbar height */
+    right: 0;
+    width: 200px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#signinup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#signinup a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#signinup a:hover {
+    background-color: #0056b3;
 }
