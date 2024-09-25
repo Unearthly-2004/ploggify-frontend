@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import "./Signin.css";
 import { Link } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa"; // Using react-icons for Google Icon
 
 function Signin() {
   const [useremail, setuseremail] = useState("");
   const [userpassword, setuserpassword] = useState("");
+
+  const handleGoogleLogin = () => {
+    // You can integrate Google login functionality here
+    console.log("Google login button clicked");
+  };
 
   return (
     <div id="SignIn">
@@ -34,10 +40,21 @@ function Signin() {
             setuserpassword(e.target.value);
           }}
         />
+
+        <button type="submit">SignIn</button>
+
         <p className="already-have">
-          Don't have a account , <Link to="/signin">CLick here</Link> To Signin
+          Don't have an account? <Link to="/signup">Click here</Link> to sign up
         </p>
-        <button>SignIn</button>
+        <div className="or">
+          <p></p>
+        </div>
+        <div className="google-login">
+          <button type="button" onClick={handleGoogleLogin} className="google-btn">
+            <FaGoogle className="google-icon" />
+            Sign in with Google
+          </button>
+        </div>
       </form>
     </div>
   );

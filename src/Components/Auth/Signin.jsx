@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa"; // Import Google icon
 import axios from "axios";
+import "./Signin.css"; // Assuming this is your CSS file
 
 function Signin() {
   const [username, setusername] = useState("");
@@ -40,10 +42,16 @@ function Signin() {
       alert("Error creating user. Please try again."); // Show an alert for error
     }
   };
+
+  const handleGoogleLogin = () => {
+    // You can integrate Google login functionality here
+    console.log("Google login button clicked");
+  };
+
   return (
     <div id="SignIn" className="secondoption">
       <form>
-        <h1>Login Form</h1>
+        <h1>Sign Up Form</h1>
 
         <label htmlFor="user-name">Name</label>
         <input
@@ -119,7 +127,7 @@ function Signin() {
           </option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
-          <option value="Female">Other</option>
+          <option value="Other">Other</option>
         </select>
 
         <label htmlFor="user-experience">Experience</label>
@@ -138,20 +146,35 @@ function Signin() {
           <option value="Participated in school drives">
             Participated in school drives
           </option>
-          <option value="Participated in college envirnomental drive">
-            Participated in college envirnomental drive
+          <option value="Participated in college environmental drive">
+            Participated in college environmental drive
           </option>
-          <option value="Member of any envirnomental community">
-            Member of any envirnomental community
+          <option value="Member of an environmental community">
+            Member of an environmental community
           </option>
-          <option value="Lead of any envirnomental community">
-            Lead of any envirnomental community
+          <option value="Lead of an environmental community">
+            Lead of an environmental community
           </option>
         </select>
+
         <p className="already-have">
-          Already have a account , <Link to="/login">CLick here</Link> To login
+          Already have an account? <Link to="/login">Click here</Link> to login
         </p>
-        <button onClick={handleFormSubmit}>SignIn</button>
+
+        <button onClick={handleFormSubmit}>Sign Up</button>
+
+        {/* OR separator */}
+        <div className="or">
+          <p></p>
+        </div>
+
+        {/* Google Login Button */}
+        <div className="google-login">
+          <button type="button" onClick={handleGoogleLogin} className="google-btn">
+            <FaGoogle className="google-icon" />
+            Sign in with Google
+          </button>
+        </div>
       </form>
     </div>
   );
