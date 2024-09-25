@@ -1,8 +1,12 @@
-/* ... (previous global styles remain unchanged) ... */
+/* Add these global styles at the top of your CSS file */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 /* Navbar styles */
 #navbar {
-    height: 12vh; /* Increased height to accommodate larger text */
+    height: 12vh;
     width: 100%;
     background-color: #d9d9d9;
     display: flex;
@@ -12,10 +16,11 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-sizing: border-box; /* Add this line */
 }
 
 .logo {
-    height: 60%; /* Slightly increased logo size */
+    height: 60%;
     margin-right: auto;
     padding-left: 30px;
 }
@@ -25,56 +30,42 @@
     flex-grow: 1;
     justify-content: flex-end;
     align-items: center;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.nav-links::-webkit-scrollbar {
+    display: none;
 }
 
 #navbar a {
     color: black;
     text-decoration: none;
     font-weight: bold;
-    margin: 0 15px; /* Increased margin for better spacing */
-    font-size: 1.8em; /* Increased font size significantly */
+    margin: 0 15px;
+    font-size: 1.8em;
     white-space: nowrap;
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    transition: color 0.3s ease;
 }
 
 #navbar a:hover {
-    color: #007bff; /* Add a hover effect */
+    color: #007bff;
 }
 
 .user-icon {
-    height: 80%; /* Increased size to match the new navbar scale */
+    height: 80%;
     cursor: pointer;
     margin-left: 25px;
     padding-right: 30px;
+    flex-shrink: 0; /* Prevent the icon from shrinking */
 }
 
-/* ... (hamburger menu styles remain unchanged) ... */
-
-/* Updated media query for smaller screens */
-@media screen and (max-width: 1024px) { /* Increased breakpoint for larger screens */
-    #navbar a {
-        font-size: 1.5em; /* Slightly smaller font size for medium screens */
-        margin: 0 10px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .user-icon {
-        margin-left: auto;
-    }
-
-    #navbar {
-        height: 10vh; /* Reduce height on smaller screens */
-    }
-}
-/* Updated hamburger menu styles */
+/* Hamburger menu styles */
 .hamburger-menu {
     position: fixed;
-    top: 12vh; /* Adjusted to match the new navbar height */
+    top: 12vh;
     right: 0;
     width: 200px;
     background-color: #f9f9f9;
@@ -118,4 +109,26 @@
 
 #signinup a:hover {
     background-color: #0056b3;
+}
+
+/* Media queries */
+@media screen and (max-width: 1024px) {
+    #navbar a {
+        font-size: 1.5em;
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .user-icon {
+        margin-left: auto;
+    }
+
+    #navbar {
+        height: 10vh;
+    }
 }
