@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa"; // Import Google icon
+import { FaGoogle } from "react-icons/fa";
 import axios from "axios";
-import "./Signin.css"; // Assuming this is your CSS file
+import "./Signin.css";
 
 function Signin() {
-  const [username, setusername] = useState("");
-  const [useremail, setuseremail] = useState("");
-  const [userpassword, setuserpassword] = useState("");
-  const [userphno, setuserphno] = useState("");
-  const [userage, setuserage] = useState("");
-  const [usergender, setusergender] = useState("");
-  const [userexperience, setuserexperience] = useState("");
+  const [username, setUsername] = useState("");
+  const [useremail, setUseremail] = useState("");
+  const [userpassword, setUserpassword] = useState("");
+  const [userphno, setUserphno] = useState("");
+  const [userage, setUserage] = useState("");
+  const [usergender, setUsergender] = useState("");
+  const [userexperience, setUserexperience] = useState("");
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
@@ -33,25 +33,24 @@ function Signin() {
         }
       );
 
-      // Assuming the response structure is { message, token }
-      alert(response.data.message); // You can also use a toast library or a modal
-      navigate("/redirect-path"); // Redirect upon successful submission
-    } catch (error) {
-      console.error("Error creating user:", error.message);
-      setError("Internal server error");
-      alert("Error creating user. Please try again."); // Show an alert for error
+      alert(response.data.message);
+      navigate("/redirect-path");
+    } catch (err) {
+      console.error("Error creating user:", err.message);
+      setError("Error creating user. Please try again.");
     }
   };
 
   const handleGoogleLogin = () => {
-    // You can integrate Google login functionality here
     console.log("Google login button clicked");
   };
 
   return (
     <div id="SignIn" className="secondoption">
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <h1>Sign Up Form</h1>
+
+        {error && <div className="error-message">{error}</div>}
 
         <label htmlFor="user-name">Name</label>
         <input
@@ -60,9 +59,7 @@ function Signin() {
           id="user-name"
           required
           value={username}
-          onChange={(e) => {
-            setusername(e.target.value);
-          }}
+          onChange={(e) => setUsername(e.target.value)}
         />
 
         <label htmlFor="user-email">Email</label>
@@ -72,9 +69,7 @@ function Signin() {
           id="user-email"
           required
           value={useremail}
-          onChange={(e) => {
-            setuseremail(e.target.value);
-          }}
+          onChange={(e) => setUseremail(e.target.value)}
         />
 
         <label htmlFor="user-password">Password</label>
@@ -84,9 +79,7 @@ function Signin() {
           id="user-password"
           required
           value={userpassword}
-          onChange={(e) => {
-            setuserpassword(e.target.value);
-          }}
+          onChange={(e) => setUserpassword(e.target.value)}
         />
 
         <label htmlFor="user-phno">Phone Number</label>
@@ -96,9 +89,7 @@ function Signin() {
           id="user-phno"
           required
           value={userphno}
-          onChange={(e) => {
-            setuserphno(e.target.value);
-          }}
+          onChange={(e) => setUserphno(e.target.value)}
         />
 
         <label htmlFor="user-age">Age</label>
@@ -108,9 +99,7 @@ function Signin() {
           id="user-age"
           required
           value={userage}
-          onChange={(e) => {
-            setuserage(e.target.value);
-          }}
+          onChange={(e) => setUserage(e.target.value)}
         />
 
         <label htmlFor="user-gender">Gender</label>
@@ -118,13 +107,9 @@ function Signin() {
           name="user-gender"
           id="usergender"
           value={usergender}
-          onChange={(e) => {
-            setusergender(e.target.value);
-          }}
+          onChange={(e) => setUsergender(e.target.value)}
         >
-          <option value="" disabled selected>
-            Gender
-          </option>
+          <option value="" disabled>Gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Other">Other</option>
@@ -135,40 +120,26 @@ function Signin() {
           name="user-experience"
           id="userexperience"
           value={userexperience}
-          onChange={(e) => {
-            setuserexperience(e.target.value);
-          }}
+          onChange={(e) => setUserexperience(e.target.value)}
         >
-          <option value="" disabled selected>
-            What you have done so far?
-          </option>
+          <option value="" disabled>What you have done so far?</option>
           <option value="Newbie">Newbie</option>
-          <option value="Participated in school drives">
-            Participated in school drives
-          </option>
-          <option value="Participated in college environmental drive">
-            Participated in college environmental drive
-          </option>
-          <option value="Member of an environmental community">
-            Member of an environmental community
-          </option>
-          <option value="Lead of an environmental community">
-            Lead of an environmental community
-          </option>
+          <option value="Participated in school drives">Participated in school drives</option>
+          <option value="Participated in college environmental drive">Participated in college environmental drive</option>
+          <option value="Member of an environmental community">Member of an environmental community</option>
+          <option value="Lead of an environmental community">Lead of an environmental community</option>
         </select>
 
         <p className="already-have">
           Already have an account? <Link to="/login">Click here</Link> to login
         </p>
 
-        <button onClick={handleFormSubmit}>Sign Up</button>
+        <button type="submit">Sign Up</button>
 
-        {/* OR separator */}
         <div className="or">
           <p></p>
         </div>
 
-        {/* Google Login Button */}
         <div className="google-login">
           <button type="button" onClick={handleGoogleLogin} className="google-btn">
             <FaGoogle className="google-icon" />

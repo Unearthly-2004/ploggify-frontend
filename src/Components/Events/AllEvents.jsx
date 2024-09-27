@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./AllEvents.css";
 import Data from "./data.json";
-import { Link } from "react-router-dom";
 
 function AllEvents() {
   const [isPrevious, setisPrevious] = useState(true);
@@ -37,7 +36,7 @@ function AllEvents() {
 
     return filteredEvents.map((details, index) => (
       <div key={index} className="one-event-card">
-        <img src={details["img-source"]} alt="" />
+        <img src={details["img-source"]} alt={details.title} />
         <h2>{details["title"]}</h2>
         <p className="event-date">
           <i className="fa-regular fa-calendar"></i>
@@ -56,7 +55,7 @@ function AllEvents() {
           <button className="more-details-btn">View More</button>
           {!isPrevious && (
             <button
-              onClick={() => handleEnrollClick(details)} // Handle enroll click
+              onClick={() => handleEnrollClick(details)}
             >
               Enroll
             </button>
