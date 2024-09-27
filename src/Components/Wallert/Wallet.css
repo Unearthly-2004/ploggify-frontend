@@ -1,81 +1,85 @@
 .wallet-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .user-info, .token-info {
-    width: 45%;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #713ca0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #5b2f82;
-  }
-  
-  .popup-form {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .form-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-container label {
-    margin-bottom: 10px;
-  }
-  
-  .form-container input {
-    margin-top: 5px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 100%;
-  }
-  
-  .form-container button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #713ca0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .form-container button:hover {
-    background-color: #5b2f82;
-  }
-  
-  .form-container button:last-child {
-    background-color: #ccc;
-  }
-  
-  .form-container button:last-child:hover {
-    background-color: #aaa;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.user-info, .token-info {
+  width: 45%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #713ca0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5b2f82;
+}
+
+.popup-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 10px;
+}
+
+.form-container input {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.form-container button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #713ca0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #5b2f82;
+}
+
+.form-container button:last-child {
+  background-color: #ccc;
+}
+
+.form-container button:last-child:hover {
+  background-color: #aaa;
+}
+
+/* Add space between buttons */
+.token-info button + button {
+  margin-left: 10px;
+}

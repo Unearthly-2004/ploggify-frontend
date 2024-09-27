@@ -132,3 +132,32 @@ html, body {
         height: 10vh;
     }
 }
+
+/* ... (existing styles) ... */
+
+.telegram-icon {
+    height: 80%;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+  
+  /* Update the media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    
+    .user-icon, .telegram-icon {
+      margin-left: auto;
+    }
+    
+    .telegram-icon {
+      margin-right: 15px;
+    }
+  
+    #navbar {
+      height: 10vh;
+    }
+  }

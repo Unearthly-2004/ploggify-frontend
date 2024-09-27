@@ -35,6 +35,10 @@ function Wallet() {
     alert(isEditMode ? 'Wallet Info Updated Successfully' : 'Wallet Connected Successfully');
   };
 
+  const handleCreateWallet = () => {
+    window.location.href = 'https://play.google.com/store/apps/details?id=com.diamante.diamwallet';
+  };
+
   const handleInputChange = (e) => {
     setWalletInput(e.target.value);
   };
@@ -57,7 +61,10 @@ function Wallet() {
         <h2>Wallet Info</h2>
         <p><strong>Available Tokens:</strong> {isConnected ? availableTokens : 'Not connected'}</p>
         {!isConnected && (
-          <button onClick={handleConnectWallet}>Connect to Wallet</button>
+          <div>
+            <button onClick={handleConnectWallet}>Connect to Wallet</button>
+            <button onClick={handleCreateWallet}>Create a Wallet</button>
+          </div>
         )}
       </div>
 

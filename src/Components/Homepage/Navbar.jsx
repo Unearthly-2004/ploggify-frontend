@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../Images/Ploggify.png";
 import user from "../Images/user.png";
+import telegram from "../Images/Telegram1.png";
 
 // Updated component for the hamburger menu
 const HamburgerMenu = ({ isOpen, onClose }) => {
@@ -26,6 +27,10 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const openTelegram = () => {
+    window.open("https://telegram.org", "_blank");
+  };
+
   return (
     <div id="navbar">
       <img src={logo} alt="Ploggify Logo" className="logo" />
@@ -36,6 +41,12 @@ function Navbar() {
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/report">Report</Link>
       </div>
+      <img
+        src={telegram}
+        alt="Telegram"
+        className="telegram-icon"
+        onClick={openTelegram}
+      />
       <img
         src={user}
         alt="User Account"
