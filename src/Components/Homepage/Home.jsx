@@ -5,7 +5,7 @@ import LandingPageCircle from "../Images/Ellipse 1.png";
 import feature1 from "../Images/Teamwork PNG Transparent, Teamwork, Teamwork Clipart, 3d Villain, Team PNG Image For Free Download 1.png";
 import feature2 from "../Images/Free Photo _ Bell reminder notification alert or alarm icon sign or symbol for application website ui on white background 3d rendering illustration 1.png";
 import feature3 from "../Images/Money Clipart Vector, Money, Money Clipart, Fund, Transfer PNG Image For Free Download 1.png";
-import VoiceFlowChat from './VoiceFlowChat'; // Make sure this path is correct
+
 function Home() {
   return (
     <div>
@@ -37,7 +37,6 @@ function Home() {
           <p>Fundraising and resource mobilization:</p>
         </div>
       </div>
-      <VoiceFlowChat />
     </div>
   );
 }
